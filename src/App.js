@@ -1,23 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+
+const Button = (props) => {
+  return <div className={`button ${props.color}`} {...props}></div>
+}
+
+const Placeholder = () => {
+  return (
+    <div className="placeholder">
+      <span>Here's a good spot!</span>
+    </div>
+  )
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <div className="drag-list">
+        <Button draggable color="blue" />
+        <Button draggable color="red" />
+        <Button />
+        <Placeholder />
+      </div>
     </div>
   );
 }
