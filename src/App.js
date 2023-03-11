@@ -1,25 +1,31 @@
-import './App.css';
+import { useState } from "react";
+import "./App.css";
 
-const Button = (props) => {
-  return <div className={`button ${props.color}`} {...props}></div>
-}
+const ConditionalBlock = ({ color }) => {
+  const [isDropZone, setIsDropZone] = useState(false);
 
-const Placeholder = () => {
+  if (color) return <div draggable className={`button ${color}`}></div>;
+
   return (
-    <div className="placeholder">
-      <span>Here's a good spot!</span>
-    </div>
-  )
-}
+    <div
+      className={`placeholder ${isDropZone ? "in-hover" : ""}`}
+      onDragEnter={() => setIsDropZone(true)}
+      onDragLeave={() => setIsDropZone(false)}
+    ></div>
+  );
+};
+
+const INITIAL_SETUP = ["blue", "red", "", ""];
 
 function App() {
+  let [blockList] = useState(INITIAL_SETUP);
+
   return (
     <div className="container">
       <div className="drag-list">
-        <Button draggable color="blue" />
-        <Button draggable color="red" />
-        <Button />
-        <Placeholder />
+        {blockList.map((color) => (
+          <ConditionalBlock color={color} />
+        ))}
       </div>
     </div>
   );

@@ -44,6 +44,10 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+  opacity: 0;
+}
+
+.placeholder.in-hover{
   opacity: 0.6;
 }
 
