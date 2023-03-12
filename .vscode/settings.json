@@ -1,0 +1,8 @@
+{
+    "editor.minimap.enabled": false,
+    "editor.fontSize": 14,
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.formatOnType": true,
+    "editor.formatOnPaste": true,
+    "editor.window.menuBarVisibility": false
+}
