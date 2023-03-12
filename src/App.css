@@ -32,13 +32,11 @@
   background-color: blue;
 }
 
-.block.in-hover{
-  opacity: 0.6;
-  border: 1px dashed black;
+.block.placeholder {
+  opacity: 0;
 }
 
-.placeholder span {
-  font-family: 'Caveat', cursive;
-  font-size: 16px;
-  font-size: 30px;
+.block.placeholder.drag-over {
+  opacity: 0.6;
+  border: 1px dashed black;
 }
