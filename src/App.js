@@ -8,17 +8,13 @@ function ConditionalBlock({ color }) {
 
   if (color) return <div draggable className={`block ${color}`}></div>;
 
-  function handleDragOver(e) {
-    e.preventDefault();
-    setInDragOver(true)
-  }
-
   return (
     <div
-      className={`block placeholder ${inDragOver ? 'drag-over' : ''}`}
-      onDragOver={handleDragOver}
+      className={`block placeholder ${inDragOver ? "drag-over" : ""}`}
+      onDragEnter={() => setInDragOver(true)}
+      onDragLeave={() => setInDragOver(false)}
     />
-  )
+  );
 }
 
 function App() {
